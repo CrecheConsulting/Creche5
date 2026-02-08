@@ -15,19 +15,10 @@
         .loading-dots:after { content: '.'; animation: dots 1.5s steps(5, end) infinite; }
         @keyframes dots { 0%, 20% { content: '.'; } 40% { content: '..'; } 60% { content: '...'; } 80%, 100% { content: ''; } }
         .card-shadow { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+        .error-msg { background: #fee; color: #c00; padding: 1rem; border-radius: 0.5rem; border: 1px solid #fcc; }
     </style>
 </head>
 <body class="antialiased">
-
-    <!-- 
-        Chosen Palette: High-Contrast Professional (Blue, Emerald, Slate)
-        Application Structure Plan:
-        - Hero: Professional intro.
-        - Roadmap: 4-Phase plan including the new Retainer (Phase D).
-        - Space Engineer: Updated for 17 children.
-        - AI Lab: Fixed logic with exponential backoff and correct models.
-        CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
-    -->
 
     <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -81,7 +72,6 @@
                     <p class="text-xs text-slate-500 mb-4">60 DAYS</p>
                     <p class="text-sm text-slate-600">Garda Vetting & Reference audits.</p>
                 </div>
-                <!-- New Retainer Phase -->
                 <div class="bg-indigo-600 p-6 rounded-3xl shadow-xl border border-indigo-500 text-white">
                     <div class="font-black text-2xl mb-4">Phase D</div>
                     <h3 class="font-bold mb-2">Monthly Retainer</h3>
@@ -92,7 +82,7 @@
             </div>
         </section>
 
-        <!-- Section 2: Space Engineer (Updated for 17 Children) -->
+        <!-- Section 2: Space Engineer -->
         <section id="calculator" class="scroll-mt-24">
             <div class="bg-white rounded-[2.5rem] p-8 md:p-12 card-shadow border border-slate-100">
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -130,13 +120,21 @@
             </div>
         </section>
 
-        <!-- Section 3: AI Lab (Fixed Logic) -->
+        <!-- Section 3: AI Lab -->
         <section id="ai-lab" class="scroll-mt-24">
             <div class="bg-slate-900 rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative">
-                <div class="max-w-3xl mb-12">
+                <div class="max-w-3xl mb-8">
                     <h2 class="text-3xl font-extrabold text-white mb-4">✨ AI Compliance Laboratory</h2>
-                    <p class="text-slate-400">Intelligent policy auditing and inspection simulations using Gemini 2.5.</p>
+                    <p class="text-slate-400">Intelligent policy auditing and inspection simulations using Gemini AI.</p>
                 </div>
+                
+                <!-- API Key Input -->
+                <div class="mb-6 bg-slate-800 p-4 rounded-xl border border-yellow-600">
+                    <label class="block text-yellow-400 font-bold mb-2 text-sm">🔑 Gemini API Key (Required)</label>
+                    <input type="password" id="apiKeyInput" class="w-full bg-slate-700 border border-slate-600 rounded-lg p-3 text-slate-200 text-sm focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Ingresa tu API Key de Google AI Studio...">
+                    <p class="text-xs text-slate-500 mt-2">Obtén tu clave gratis en: <a href="https://aistudio.google.com/apikey" target="_blank" class="text-blue-400 underline">aistudio.google.com/apikey</a></p>
+                </div>
+
                 <div class="grid lg:grid-cols-2 gap-8">
                     <div class="space-y-6">
                         <textarea id="aiInput" class="w-full h-48 bg-slate-800 border border-slate-700 rounded-2xl p-6 text-slate-200 text-sm focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Paste your policy text or describe a room scenario..."></textarea>
@@ -151,7 +149,7 @@
                             <div class="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
                             <p class="mt-4 text-blue-400 font-bold loading-dots uppercase tracking-widest text-xs">Analyzing</p>
                         </div>
-                        <div id="aiOutput" class="text-slate-300 text-sm font-mono leading-relaxed whitespace-pre-wrap h-full overflow-y-auto">
+                        <div id="aiOutput" class="text-slate-300 text-sm leading-relaxed whitespace-pre-wrap h-full overflow-y-auto">
                             <p class="text-slate-600 italic">// AI report will appear here...</p>
                         </div>
                     </div>
@@ -167,29 +165,7 @@
     </footer>
 
     <script>
-        // --- API CONFIG & RETRY LOGIC ---
-        const apiKey = "";
-        const TEXT_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent";
-        const TTS_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent";
-
-        async function fetchWithRetry(url, payload) {
-            let delay = 1000;
-            for (let i = 0; i < 5; i++) {
-                try {
-                    const response = await fetch(`${url}?key=${apiKey}`, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-                    if (response.ok) return await response.json();
-                } catch (e) { /* silent retry */ }
-                await new Promise(r => setTimeout(r, delay));
-                delay *= 2;
-            }
-            throw new Error("API Connection Failed after 5 retries.");
-        }
-
-        // --- SPACE CALCULATOR (17 CAPACITY) ---
+        // --- SPACE CALCULATOR ---
         const wobblerSlider = document.getElementById('wobblerSlider');
         const toddlerSlider = document.getElementById('toddlerSlider');
         const spaceCtx = document.getElementById('spaceChart').getContext('2d');
@@ -204,7 +180,22 @@
                     borderRadius: 8
                 }]
             },
-            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+            options: { 
+                responsive: true, 
+                maintainAspectRatio: false, 
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { color: '#94a3b8' },
+                        grid: { color: '#334155' }
+                    },
+                    x: {
+                        ticks: { color: '#94a3b8' },
+                        grid: { display: false }
+                    }
+                }
+            }
         });
 
         function updateSpace() {
@@ -227,28 +218,118 @@
         wobblerSlider.oninput = updateSpace;
         toddlerSlider.oninput = updateSpace;
 
-        // --- AI LOGIC ---
+        // --- AI LOGIC (FIXED) ---
+        const TEXT_MODEL = "gemini-2.0-flash-exp";
+        
+        function getApiKey() {
+            const key = document.getElementById('apiKeyInput').value.trim();
+            if (!key) {
+                throw new Error("Por favor ingresa tu API Key de Gemini");
+            }
+            return key;
+        }
+
+        async function fetchWithRetry(url, payload, retries = 3) {
+            let delay = 1000;
+            let lastError;
+            
+            for (let i = 0; i < retries; i++) {
+                try {
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        throw new Error(errorData.error?.message || `HTTP ${response.status}: ${response.statusText}`);
+                    }
+                    
+                    return await response.json();
+                } catch (e) {
+                    lastError = e;
+                    console.error(`Intento ${i + 1} falló:`, e);
+                    if (i < retries - 1) {
+                        await new Promise(r => setTimeout(r, delay));
+                        delay *= 2;
+                    }
+                }
+            }
+            throw lastError;
+        }
+
         async function runAILogic(type) {
-            const input = document.getElementById('aiInput').value;
+            const input = document.getElementById('aiInput').value.trim();
             const output = document.getElementById('aiOutput');
             const loader = document.getElementById('aiLoading');
             
-            loader.classList.remove('hidden');
-            
-            const sysPrompt = type === 'audit' 
-                ? "You are an expert Tusla Auditor. Analyze the ECE policy provided against Ireland's QRF. Be strict and professional."
-                : "You are a Tusla Inspector. Generate a surprise inspection scenario for a 17-place creche. Describe a non-compliance issue and ask for a fix.";
-            
-            const query = input || (type === 'audit' ? "No policy provided." : "Generate random inspection scenario.");
-
             try {
-                const data = await fetchWithRetry(TEXT_URL, {
-                    contents: [{ parts: [{ text: query }] }],
-                    systemInstruction: { parts: [{ text: sysPrompt }] }
-                });
-                output.innerText = data.candidates?.[0]?.content?.parts?.[0]?.text || "No response generated.";
+                const apiKey = getApiKey();
+                loader.classList.remove('hidden');
+                output.innerHTML = '<p class="text-slate-600 italic">// Processing...</p>';
+                
+                const systemPrompts = {
+                    audit: `You are an expert Tusla Early Years Inspector for Ireland. 
+
+Analyze the provided childcare policy against Ireland's Quality and Regulatory Framework (QRF) standards.
+
+Provide:
+1. COMPLIANCE RATING (Excellent/Good/Needs Improvement/Non-Compliant)
+2. KEY STRENGTHS (2-3 points)
+3. AREAS FOR IMPROVEMENT (specific gaps)
+4. CRITICAL ISSUES (if any - safety/regulatory violations)
+5. RECOMMENDATIONS (actionable steps)
+
+Be professional, specific, and cite relevant QRF standards where applicable.`,
+                    
+                    sim: `You are a Tusla Early Years Inspector conducting a surprise inspection at a 17-place boutique creche in Ireland.
+
+Generate a realistic inspection scenario including:
+1. INSPECTION FOCUS (e.g., safety equipment, staff ratios, hygiene, documentation)
+2. OBSERVATION (what you notice during the visit)
+3. NON-COMPLIANCE ISSUE (realistic problem found - be specific)
+4. SEVERITY LEVEL (Minor/Moderate/Serious)
+5. IMMEDIATE ACTION REQUIRED (what the provider must do)
+6. FOLLOW-UP TIMEFRAME
+
+Make it realistic and educational. Base findings on actual QRF requirements.`
+                };
+                
+                const userQuery = input || (type === 'audit' 
+                    ? "Please provide a sample policy for analysis, or generate a generic audit checklist for a 17-place creche."
+                    : "Generate a random but realistic inspection scenario.");
+                
+                const url = `https://generativelanguage.googleapis.com/v1beta/models/${TEXT_MODEL}:generateContent?key=${apiKey}`;
+                
+                const payload = {
+                    contents: [{
+                        parts: [{ text: userQuery }]
+                    }],
+                    systemInstruction: {
+                        parts: [{ text: systemPrompts[type] }]
+                    },
+                    generationConfig: {
+                        temperature: 0.7,
+                        maxOutputTokens: 2048
+                    }
+                };
+
+                const data = await fetchWithRetry(url, payload);
+                
+                if (data.candidates && data.candidates[0]?.content?.parts?.[0]?.text) {
+                    output.innerText = data.candidates[0].content.parts[0].text;
+                } else {
+                    throw new Error("No se recibió respuesta válida del modelo");
+                }
+                
             } catch (e) {
-                output.innerText = "Error: " + e.message;
+                output.innerHTML = `<div class="error-msg">
+                    <strong>⚠️ Error:</strong> ${e.message}
+                    <br><br>
+                    <small>Verifica que tu API Key sea correcta y que tengas cuota disponible en Google AI Studio.</small>
+                </div>`;
+                console.error("Error completo:", e);
             } finally {
                 loader.classList.add('hidden');
             }
@@ -256,47 +337,39 @@
 
         async function speakResponse() {
             const text = document.getElementById('aiOutput').innerText;
-            if (!text || text.includes('//')) return;
             const loader = document.getElementById('aiLoading');
-            loader.classList.remove('hidden');
-
+            
+            if (!text || text.includes('//') || text.includes('⚠️')) {
+                alert("No hay texto válido para leer. Ejecuta primero una auditoría o simulación.");
+                return;
+            }
+            
             try {
-                const data = await fetchWithRetry(TTS_URL, {
-                    contents: [{ parts: [{ text: "Read in a professional tone: " + text.substring(0, 800) }] }],
-                    generationConfig: {
-                        responseModalities: ["AUDIO"],
-                        speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: "Kore" } } }
-                    },
-                    model: "gemini-2.5-flash-preview-tts"
-                });
-                const audioBase64 = data.candidates[0].content.parts[0].inlineData.data;
-                const sampleRate = parseInt(data.candidates[0].content.parts[0].inlineData.mimeType.match(/rate=(\d+)/)?.[1] || 24000);
-                const blob = pcmToWav(base64ToUint8Array(audioBase64), sampleRate);
-                new Audio(URL.createObjectURL(blob)).play();
-            } catch (e) { /* error silent */ }
-            loader.classList.add('hidden');
-        }
-
-        // --- TTS HELPERS ---
-        function base64ToUint8Array(b64) {
-            const bin = atob(b64);
-            const bytes = new Uint8Array(bin.length);
-            for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
-            return bytes;
-        }
-
-        function pcmToWav(pcm, rate) {
-            const buf = new ArrayBuffer(44 + pcm.length);
-            const view = new DataView(buf);
-            const s = (o, str) => { for(let i=0; i<str.length; i++) view.setUint8(o+i, str.charCodeAt(i)); };
-            s(0, 'RIFF'); view.setUint32(4, 36 + pcm.length, true);
-            s(8, 'WAVE'); s(12, 'fmt '); view.setUint32(16, 16, true);
-            view.setUint16(20, 1, true); view.setUint16(22, 1, true);
-            view.setUint32(24, rate, true); view.setUint32(28, rate * 2, true);
-            view.setUint16(32, 2, true); view.setUint16(34, 16, true);
-            s(36, 'data'); view.setUint32(40, pcm.length, true);
-            new Uint8Array(buf, 44).set(pcm);
-            return new Blob([buf], { type: 'audio/wav' });
+                const apiKey = getApiKey();
+                loader.classList.remove('hidden');
+                
+                // Usar Web Speech API nativo (más confiable)
+                if ('speechSynthesis' in window) {
+                    const utterance = new SpeechSynthesisUtterance(text.substring(0, 1000));
+                    utterance.lang = 'en-IE'; // Inglés de Irlanda
+                    utterance.rate = 0.9;
+                    utterance.pitch = 1;
+                    
+                    // Buscar voz irlandesa si está disponible
+                    const voices = speechSynthesis.getVoices();
+                    const irishVoice = voices.find(v => v.lang.includes('en-IE') || v.lang.includes('en-GB'));
+                    if (irishVoice) utterance.voice = irishVoice;
+                    
+                    speechSynthesis.speak(utterance);
+                } else {
+                    throw new Error("Text-to-speech no está soportado en tu navegador");
+                }
+                
+            } catch (e) {
+                alert("Error al reproducir audio: " + e.message);
+            } finally {
+                loader.classList.add('hidden');
+            }
         }
     </script>
 </body>
