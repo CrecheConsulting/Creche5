@@ -3,30 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SolveED Strategic | ECE Launch & Compliance Hub</title>
+    <title>SolveED Strategic | Premium ECE Compliance Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; scroll-behavior: smooth; }
         .chart-container { position: relative; width: 100%; max-width: 600px; margin: auto; height: 350px; max-height: 400px; }
-        .tab-active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 800; }
-        .tab-inactive { color: #64748b; border-bottom: 4px solid transparent; }
-        .loading-dots:after { content: '.'; animation: dots 1.5s steps(5, end) infinite; }
-        @keyframes dots { 0%, 20% { content: '.'; } 40% { content: '..'; } 60% { content: '...'; } 80%, 100% { content: ''; } }
-        .card-shadow { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+        .card-shadow { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+        .milestone-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .milestone-card:hover { transform: translateY(-8px); }
+        /* Style for discrete prices at the bottom of the card */
+        .price-text { font-weight: 800; color: #1e293b; }
     </style>
 </head>
 <body class="antialiased">
 
     <!-- 
-        Chosen Palette: Professional High-Contrast (Blue, Emerald, Slate)
-        Application Structure Plan:
-        - Hero: High-impact introduction.
-        - Roadmap: 4-Phase strategic flow with Support Retainer (Phase D).
-        - Space Engineer: Recalibrated for 17-child capacity.
-        - AI Compliance Lab: Smart Simulation Mode enabled to prevent GitHub connection failures.
-        CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
+        Application Structure:
+        - Navigation: Links to Services and Space Calculator.
+        - Hero: Strategic positioning (Removed specific capacity mention here).
+        - Milestone 1: Pre-Fit for Purpose (Discrete price in footer).
+        - Milestone 2: Post-Fit for Purpose (Discrete price in footer).
+        - Space Engineer: Calibrated for 17-child capacity.
+        Language: English.
     -->
 
     <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
@@ -37,123 +37,192 @@
                     <span class="font-extrabold text-xl tracking-tight text-slate-900">SolveED <span class="text-blue-600 font-medium">Strategy</span></span>
                 </div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#roadmap" class="text-sm font-bold text-slate-600 hover:text-blue-600 transition">Roadmap</a>
+                    <a href="#milestones" class="text-sm font-bold text-slate-600 hover:text-blue-600 transition">Services</a>
                     <a href="#calculator" class="text-sm font-bold text-slate-600 hover:text-blue-600 transition">Space Engineer</a>
-                    <a href="#ai-lab" class="text-blue-600 font-extrabold">✨ AI Lab</a>
                 </div>
                 <button class="bg-slate-900 text-white px-5 py-2 rounded-xl text-sm font-bold shadow-lg">Client Access</button>
             </div>
         </div>
     </nav>
 
-    <header class="bg-slate-900 py-16 md:py-24 text-center relative overflow-hidden">
+    <header class="bg-slate-900 py-20 md:py-32 text-center relative overflow-hidden">
         <div class="max-w-5xl mx-auto px-4 relative z-10">
-            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight">Expert <span class="text-blue-400">Tusla Registration</span> Hub</h1>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight">Expert <span class="text-blue-400">Tusla Success</span> Strategy</h1>
             <p class="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-                Premium strategic support for 17-place boutique creches in Ireland. High-end compliance intelligence.
+                Strategic support for your creche. We bridge the gap between regulatory requirements and operational excellence.
             </p>
         </div>
     </header>
 
     <main class="max-w-7xl mx-auto px-4 py-16 space-y-24">
 
-        <!-- Section 1: Project Roadmap -->
-        <section id="roadmap" class="scroll-mt-24">
+        <!-- Section 1: Two-milestone structure with discrete footer prices -->
+        <section id="milestones" class="scroll-mt-24">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-extrabold text-slate-900 uppercase">Project Lifecycle</h2>
+                <h2 class="text-3xl font-extrabold text-slate-900 uppercase tracking-widest">Consultancy Milestones</h2>
+                <p class="text-slate-500 mt-2">A structured path to a fully registered and optimized childcare service.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div class="bg-white p-6 rounded-3xl card-shadow border border-slate-100">
-                    <div class="text-blue-600 font-black text-2xl mb-4">Phase A</div>
-                    <h3 class="font-bold text-slate-900 mb-2">Premises</h3>
-                    <p class="text-xs text-slate-500 mb-4 uppercase">6-12 Months</p>
-                    <p class="text-sm text-slate-600">Change of Use planning and Fire Safety Certification audit.</p>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Milestone 1: PRE-FIT FOR PURPOSE -->
+                <div class="milestone-card bg-white rounded-[2.5rem] card-shadow border border-slate-100 overflow-hidden flex flex-col">
+                    <div class="p-8 md:p-10 flex-1">
+                        <div class="mb-6">
+                            <span class="text-blue-600 font-black text-sm uppercase tracking-widest">Milestone 1</span>
+                            <h3 class="text-3xl font-extrabold text-slate-900 mt-1">PRE-FIT FOR PURPOSE</h3>
+                        </div>
+                        
+                        <p class="text-slate-500 mb-8 font-semibold italic text-sm">"This block ensures you reach the Fit for Purpose inspection without gaps."</p>
+                        
+                        <div class="space-y-8">
+                            <div>
+                                <h4 class="font-bold text-slate-900 flex items-center gap-2 mb-4">
+                                    <span class="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs">✓</span>
+                                    Full Tusla Shadowing
+                                </h4>
+                                <ul class="text-sm text-slate-600 space-y-2 ml-8">
+                                    <li>• Technical review of all portal uploads.</li>
+                                    <li>• Preparation of the FFP dossier.</li>
+                                    <li>• Strategic responses to Further Information Requests (FIR).</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-bold text-slate-900 flex items-center gap-2 mb-4">
+                                    <span class="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs">✓</span>
+                                    Operational Fire Safety Compliance
+                                </h4>
+                                <ul class="text-sm text-slate-600 space-y-2 ml-8">
+                                    <li>• Review of existing Fire Safety documentation.</li>
+                                    <li>• Display management (exits, procedures, assembly points).</li>
+                                    <li>• Coherence check: fire plan vs layout vs real space usage.</li>
+                                    <li>• Evidence preparation for the inspector's checklist.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 class="font-bold text-slate-900 flex items-center gap-2 mb-4">
+                                    <span class="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs">✓</span>
+                                    Mandatory FFP Policies
+                                </h4>
+                                <ul class="text-sm text-slate-600 space-y-2 ml-8">
+                                    <li>• Safeguarding, Infection Control, and Safe Sleep.</li>
+                                    <li>• Behaviour Management and local Safety Statement.</li>
+                                    <li>• Initial staff file review (Vetting, Quals, Refs).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 p-6 border-t border-slate-100 flex justify-between items-center px-10">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Payable Upfront</span>
+                        <span class="text-lg price-text">€2,000</span>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-3xl card-shadow border border-slate-100">
-                    <div class="text-emerald-600 font-black text-2xl mb-4">Phase B</div>
-                    <h3 class="font-bold text-slate-900 mb-2">Registration</h3>
-                    <p class="text-xs text-slate-500 mb-4 uppercase">90 Days</p>
-                    <p class="text-sm text-slate-600">Portal application and full Schedule 5 policy customization.</p>
-                </div>
-                <div class="bg-white p-6 rounded-3xl card-shadow border border-slate-100">
-                    <div class="text-rose-600 font-black text-2xl mb-4">Phase C</div>
-                    <h3 class="font-bold text-slate-900 mb-2">Operational</h3>
-                    <p class="text-xs text-slate-500 mb-4 uppercase">60 Days</p>
-                    <p class="text-sm text-slate-600">Garda Vetting, recruitment files, and reference validation.</p>
-                </div>
-                <div class="bg-indigo-600 p-6 rounded-3xl shadow-xl border border-indigo-500 text-white">
-                    <div class="font-black text-2xl mb-4">Phase D</div>
-                    <h3 class="font-bold mb-2">Support Retainer</h3>
-                    <p class="text-xs text-indigo-200 mb-4 font-bold uppercase tracking-widest">Continuous Support</p>
-                    <p class="text-sm opacity-90">Training updates, regulatory alerts, and on-call consultations.</p>
-                    <div class="mt-4 pt-4 border-t border-indigo-400 text-sm font-bold">Inquire for monthly retainer fees</div>
+
+                <!-- Milestone 2: POST-FIT FOR PURPOSE -->
+                <div class="milestone-card bg-white rounded-[2.5rem] card-shadow border border-slate-100 overflow-hidden flex flex-col">
+                    <div class="p-8 md:p-10 flex-1">
+                        <div class="mb-6">
+                            <span class="text-emerald-600 font-black text-sm uppercase tracking-widest">Milestone 2</span>
+                            <h3 class="text-3xl font-extrabold text-slate-900 mt-1">POST-FIT FOR PURPOSE</h3>
+                        </div>
+                        
+                        <p class="text-slate-500 mb-8 font-semibold italic text-sm">"Moving beyond paperwork: converting the creche into a solid, auditable system."</p>
+                        
+                        <div class="space-y-8">
+                            <div>
+                                <h4 class="font-bold text-slate-900 flex items-center gap-2 mb-4">
+                                    <span class="w-6 h-6 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xs">1</span>
+                                    Full HR Regulation 9 Management
+                                </h4>
+                                <ul class="text-sm text-slate-600 space-y-2 ml-8">
+                                    <li>• Finalized and auditable staff files.</li>
+                                    <li>• Clear onboarding system for future hires.</li>
+                                    <li>• Signed Induction checklists and vetting/refs.</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-bold text-slate-900 flex items-center gap-2 mb-4">
+                                    <span class="w-6 h-6 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xs">2</span>
+                                    Pedagogical Compliance (REAL Aistear)
+                                </h4>
+                                <ul class="text-sm text-slate-600 space-y-2 ml-8">
+                                    <li>• Functional layout organized by interest areas.</li>
+                                    <li>• Daily flow coherent with the Aistear framework.</li>
+                                    <li>• Supervision, safety, and observability optimization.</li>
+                                    <li>• Design to avoid common inspector observations.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 class="font-bold text-slate-900 flex items-center gap-2 mb-4">
+                                    <span class="w-6 h-6 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xs">3</span>
+                                    Staff Training & Unannounced Inspections
+                                </h4>
+                                <ul class="text-sm text-slate-600 space-y-2 ml-8">
+                                    <li>• Practical Aistear application in specific classrooms.</li>
+                                    <li>• Inspection etiquette and policy implementation training.</li>
+                                    <li>• Logbooks and Regulation 31 protocol setup.</li>
+                                    <li>• Implementation of a monthly self-audit system.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 p-6 border-t border-slate-100 flex justify-between items-center px-10">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Payable Post-Inspection</span>
+                        <span class="text-lg price-text">€2,000</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 2: Space Engineer (17 Capacity) -->
+        <!-- Section 2: Space Engineer (Capacity 17) -->
         <section id="calculator" class="scroll-mt-24">
-            <div class="bg-white rounded-[2.5rem] p-8 md:p-12 card-shadow border border-slate-100">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <div class="space-y-8">
-                        <h2 class="text-3xl font-extrabold text-slate-900">Space Engineer (17 Capacity)</h2>
-                        <p class="text-slate-600 text-sm">Calculate your required net floor area for Regulation 20 compliance.</p>
+            <div class="bg-slate-900 rounded-[3rem] p-8 md:p-16 shadow-2xl relative overflow-hidden text-white">
+                <div class="absolute top-0 right-0 p-10 opacity-10">
+                    <span class="text-9xl font-black">17</span>
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-16 items-center relative z-10">
+                    <div class="space-y-10">
                         <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="font-bold text-slate-700">Wobblers (2.8m²)</span>
-                                <span id="wobblerCount" class="font-black text-blue-600 text-2xl">7</span>
-                            </div>
-                            <input type="range" id="wobblerSlider" min="0" max="17" value="7" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                            <h2 class="text-4xl font-extrabold mb-4">Space Engineer</h2>
+                            <p class="text-slate-400">Precision floor area calculation for a maximum capacity of 17 children.</p>
                         </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="font-bold text-slate-700">Toddlers (2.32m²)</span>
-                                <span id="toddlerCount" class="font-black text-emerald-600 text-2xl">10</span>
+                        
+                        <div class="space-y-12">
+                            <div class="bg-slate-800/50 p-6 rounded-3xl border border-slate-700">
+                                <div class="flex justify-between mb-4">
+                                    <span class="font-bold text-blue-400">Wobblers (2.8m²)</span>
+                                    <span id="wobblerCount" class="font-black text-2xl">7</span>
+                                </div>
+                                <input type="range" id="wobblerSlider" min="0" max="17" value="7" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-blue-500">
                             </div>
-                            <input type="range" id="toddlerSlider" min="0" max="17" value="10" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600">
+                            
+                            <div class="bg-slate-800/50 p-6 rounded-3xl border border-slate-700">
+                                <div class="flex justify-between mb-4">
+                                    <span class="font-bold text-emerald-400">Toddlers (2.32m²)</span>
+                                    <span id="toddlerCount" class="font-black text-2xl">10</span>
+                                </div>
+                                <input type="range" id="toddlerSlider" min="0" max="17" value="10" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-emerald-500">
+                            </div>
                         </div>
-                        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 flex justify-between items-center">
+
+                        <div class="p-8 bg-blue-600 rounded-[2rem] flex justify-between items-center shadow-xl shadow-blue-500/20">
                             <div>
-                                <p class="text-xs font-bold text-slate-400 uppercase">Total Area Req.</p>
-                                <p class="text-4xl font-black text-slate-900" id="totalSpace">42.8 m²</p>
+                                <p class="text-xs font-bold text-blue-100 uppercase tracking-widest mb-1">Required Net Area</p>
+                                <p class="text-4xl font-black" id="totalSpace">42.8 m²</p>
                             </div>
                             <div class="text-right">
-                                <p class="text-xs font-bold text-slate-400 uppercase">Capacity Status</p>
-                                <p class="text-4xl font-black text-blue-600" id="totalChildren">17/17</p>
+                                <p class="text-xs font-bold text-blue-100 uppercase tracking-widest mb-1">Capacity</p>
+                                <p class="text-4xl font-black" id="totalChildren">17/17</p>
                             </div>
                         </div>
                     </div>
-                    <div class="chart-container">
+                    
+                    <div class="bg-white rounded-[2.5rem] p-8 card-shadow h-[400px]">
                         <canvas id="spaceChart"></canvas>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 3: AI Lab (Robust Integration) -->
-        <section id="ai-lab" class="scroll-mt-24">
-            <div class="bg-slate-900 rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative">
-                <div class="max-w-3xl mb-12">
-                    <h2 class="text-3xl font-extrabold text-white mb-4">✨ AI Compliance Laboratory</h2>
-                    <p class="text-slate-400">Intelligent policy auditing and inspection simulations powered by Gemini 2.5.</p>
-                </div>
-                <div class="grid lg:grid-cols-2 gap-8">
-                    <div class="space-y-6">
-                        <textarea id="aiInput" class="w-full h-48 bg-slate-800 border border-slate-700 rounded-2xl p-6 text-slate-200 text-sm focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Paste your policy text or describe a room scenario..."></textarea>
-                        <div class="flex flex-wrap gap-4">
-                            <button onclick="runAILogic('audit')" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-bold transition hover:bg-blue-500">Audit Policy ✨</button>
-                            <button onclick="runAILogic('sim')" class="bg-emerald-600 text-white px-6 py-3 rounded-xl font-bold transition hover:bg-emerald-500">Inspection Sim ✨</button>
-                            <button onclick="speakResponse()" class="bg-slate-700 text-white px-6 py-3 rounded-xl font-bold hover:bg-slate-600">🔊 Listen</button>
-                        </div>
-                    </div>
-                    <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700 min-h-[300px] relative overflow-hidden">
-                        <div id="aiLoading" class="hidden absolute inset-0 bg-slate-800/90 backdrop-blur-sm z-50 flex flex-col items-center justify-center">
-                            <div class="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
-                            <p class="mt-4 text-blue-400 font-bold loading-dots uppercase tracking-widest text-xs">Analyzing</p>
-                        </div>
-                        <div id="aiOutput" class="text-slate-300 text-sm font-mono leading-relaxed whitespace-pre-wrap h-full overflow-y-auto">
-                            <p class="text-slate-600 italic">// AI report will be generated here...</p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -161,50 +230,18 @@
 
     </main>
 
-    <footer class="bg-slate-50 border-t border-slate-200 py-12 text-center">
-        <p class="text-slate-500 font-extrabold text-lg">SolveED Strategy | 2026</p>
-        <p class="text-slate-400 text-sm mt-2">Compliance Technology for Irish Early Childhood Education.</p>
+    <footer class="bg-slate-50 border-t border-slate-200 py-16 text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="text-slate-500 font-extrabold text-xl">SolveED Strategy Hub | 2026</p>
+            <p class="text-slate-400 text-sm mt-2 max-w-xl mx-auto leading-relaxed">
+                Strategic Consultancy for Early Childhood Education registration and operational excellence in Ireland. 
+                Full compliance with Child Care Act 1991 (Early Years Services) Regulations 2016.
+            </p>
+        </div>
     </footer>
 
     <script>
-        // --- API CONFIG ---
-        const apiKey = ""; // Environment will inject this. If empty, simulation mode activates.
-        const TEXT_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent";
-        const TTS_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent";
-
-        async function fetchWithRetry(url, payload) {
-            if (!apiKey) {
-                // Return a simulated response for demo if no key is provided
-                return simulateResponse(payload);
-            }
-            const backoff = [1000, 2000, 4000, 8000, 16000];
-            for (let i = 0; i < backoff.length; i++) {
-                try {
-                    const response = await fetch(`${url}?key=${apiKey}`, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-                    if (response.ok) return await response.json();
-                } catch (e) { }
-                await new Promise(r => setTimeout(r, backoff[i]));
-            }
-            throw new Error("Connection failed. Running in simulation mode.");
-        }
-
-        function simulateResponse(payload) {
-            return new Promise(resolve => {
-                setTimeout(() => {
-                    const isAudit = payload.systemInstruction.parts[0].text.includes("Auditor");
-                    const text = isAudit 
-                        ? "[DEMO MODE: No API Key detected]\n\nAudit Findings:\n1. Regulation 23 (Health & Welfare): Ensure physical sleep checks are logged every 15 minutes.\n2. Regulation 9 (Management): Staff vetting must be verified prior to commencement.\n3. Risk: High. Update your 'Safe Sleep Policy' to match 2026 standards."
-                        : "[DEMO MODE: No API Key detected]\n\nSurprise Inspection Scenario:\nAn inspector arrives at 11:30 AM and notes that the Wobbler Room sleep log has a 45-minute gap. \n\nCompliance Breach: Regulation 23.\nRequired Action: Explain the staffing ratio during the gap and present training records for all room supervisors immediately.";
-                    resolve({ candidates: [{ content: { parts: [{ text: text }] } }] });
-                }, 1500);
-            });
-        }
-
-        // --- SPACE CALCULATOR (17 CAPACITY) ---
+        // --- Space calculator logic ---
         const wobblerSlider = document.getElementById('wobblerSlider');
         const toddlerSlider = document.getElementById('toddlerSlider');
         const spaceCtx = document.getElementById('spaceChart').getContext('2d');
@@ -212,20 +249,32 @@
         let spaceChart = new Chart(spaceCtx, {
             type: 'bar',
             data: {
-                labels: ['Wobbler Area', 'Toddler Area', 'Total Req.', 'Room Limit (48m²)'],
+                labels: ['Wobbler Area', 'Toddler Area', 'Total Req.', 'Max Net Area'],
                 datasets: [{
                     data: [19.6, 23.2, 42.8, 48],
                     backgroundColor: ['#2563eb', '#10b981', '#1e293b', '#cbd5e1'],
-                    borderRadius: 8
+                    borderRadius: 12
                 }]
             },
-            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+            options: { 
+                responsive: true, 
+                maintainAspectRatio: false, 
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { grid: { display: false }, ticks: { font: { weight: 'bold' } } },
+                    x: { grid: { display: false }, ticks: { font: { weight: 'bold' } } }
+                }
+            }
         });
 
         function updateSpace() {
             let w = parseInt(wobblerSlider.value);
             let t = parseInt(toddlerSlider.value);
-            if ((w + t) > 17) { t = 17 - w; toddlerSlider.value = t; }
+            
+            if ((w + t) > 17) {
+                t = 17 - w;
+                toddlerSlider.value = t;
+            }
 
             const wSpace = (w * 2.8).toFixed(1);
             const tSpace = (t * 2.32).toFixed(1);
@@ -239,80 +288,9 @@
             spaceChart.data.datasets[0].data = [wSpace, tSpace, total, 48];
             spaceChart.update();
         }
+        
         wobblerSlider.oninput = updateSpace;
         toddlerSlider.oninput = updateSpace;
-
-        // --- AI LOGIC ---
-        async function runAILogic(type) {
-            const input = document.getElementById('aiInput').value;
-            const output = document.getElementById('aiOutput');
-            const loader = document.getElementById('aiLoading');
-            
-            loader.classList.remove('hidden');
-            
-            const sysPrompt = type === 'audit' 
-                ? "You are an expert Tusla Compliance Auditor. Analyze the ECE policy against the Irish QRF. Be strict and professional."
-                : "You are a Tusla Inspector. Generate a surprise inspection scenario for a boutique creche. Describe a non-compliance and ask for a fix.";
-            
-            const query = input || (type === 'audit' ? "Baseline check." : "Random scenario.");
-
-            try {
-                const data = await fetchWithRetry(TEXT_URL, {
-                    contents: [{ parts: [{ text: query }] }],
-                    systemInstruction: { parts: [{ text: sysPrompt }] }
-                });
-                output.innerText = data.candidates?.[0]?.content?.parts?.[0]?.text || "No response generated.";
-            } catch (e) {
-                output.innerText = "Error: " + e.message;
-            } finally {
-                loader.classList.add('hidden');
-            }
-        }
-
-        async function speakResponse() {
-            const text = document.getElementById('aiOutput').innerText;
-            if (!text || text.includes('//')) return;
-            const loader = document.getElementById('aiLoading');
-            loader.classList.remove('hidden');
-
-            try {
-                const data = await fetchWithRetry(TTS_URL, {
-                    contents: [{ parts: [{ text: "Read professionally: " + text.substring(0, 800) }] }],
-                    generationConfig: {
-                        responseModalities: ["AUDIO"],
-                        speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: "Kore" } } }
-                    },
-                    model: "gemini-2.5-flash-preview-tts"
-                });
-                const audioData = data.candidates[0].content.parts[0].inlineData.data;
-                const sampleRate = parseInt(data.candidates[0].content.parts[0].inlineData.mimeType.match(/rate=(\d+)/)?.[1] || 24000);
-                const blob = pcmToWav(base64ToUint8Array(audioData), sampleRate);
-                new Audio(URL.createObjectURL(blob)).play();
-            } catch (e) { }
-            loader.classList.add('hidden');
-        }
-
-        // --- HELPERS ---
-        function base64ToUint8Array(b64) {
-            const bin = atob(b64);
-            const bytes = new Uint8Array(bin.length);
-            for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
-            return bytes;
-        }
-
-        function pcmToWav(pcm, rate) {
-            const buf = new ArrayBuffer(44 + pcm.length);
-            const view = new DataView(buf);
-            const s = (o, str) => { for(let i=0; i<str.length; i++) view.setUint8(o+i, str.charCodeAt(i)); };
-            s(0, 'RIFF'); view.setUint32(4, 36 + pcm.length, true);
-            s(8, 'WAVE'); s(12, 'fmt '); view.setUint32(16, 16, true);
-            view.setUint16(20, 1, true); view.setUint16(22, 1, true);
-            view.setUint32(24, rate, true); view.setUint32(28, rate * 2, true);
-            view.setUint16(32, 2, true); view.setUint16(34, 16, true);
-            s(36, 'data'); view.setUint32(40, pcm.length, true);
-            new Uint8Array(buf, 44).set(pcm);
-            return new Blob([buf], { type: 'audio/wav' });
-        }
     </script>
 </body>
 </html>
