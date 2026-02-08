@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolveED Strategic | Creche Launch & Compliance Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; scroll-behavior: smooth; }
+        
+        /* Chart Container Constraints */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+
+        .tab-active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 800; }
+        .tab-inactive { color: #64748b; border-bottom: 4px solid transparent; }
+
+        .loading-dots:after {
+            content: '.';
+            animation: dots 1.5s steps(5, end) infinite;
+        }
+        @keyframes dots {
+            0%, 20% { content: '.'; }
+            40% { content: '..'; }
+            60% { content: '...'; }
+            80%, 100% { content: ''; }
+        }
+
+        /* Material Design Card Style */
+        .card-shadow { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
+        
+        /* Custom UI colors */
+        .bg-tusla-blue { background-color: #1e3a8a; }
+        .text-tusla-blue { color: #1e3a8a; }
+        .bg-accent-green { background-color: #059669; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- 
+        Chosen Palette: Brilliant Professional (Blue-600, Emerald-600, Slate-900)
+        Application Structure Plan:
+        1. Navigation: Sticky navigation for quick access to Roadmap, Calculator, and AI Tools.
+        2. Hero: Value proposition focused on Tusla Registration success.
+        3. Roadmap Section: Timeline of Phases A, B, and C with critical milestones.
+        4. Space Engineer Tool: Interactive slider-based calculator for Reg 20 compliance.
+        5. AI Compliance Lab: Integrated Gemini API tools (Policy Auditor, Simulator, TTS).
+        6. Vetting Scorecard: Radar chart comparing market norms vs SolveED standards.
+        7. Technical Footer: Disclaimer and regulatory references.
+        CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. All charts via Chart.js Canvas.
+    -->
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-extrabold text-xl">S</div>
+                    <span class="font-extrabold text-xl tracking-tight text-slate-900">SolveED <span class="text-blue-600 font-medium">Strategy</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#roadmap" class="text-sm font-bold text-slate-600 hover:text-blue-600 transition">Roadmap</a>
+                    <a href="#calculator" class="text-sm font-bold text-slate-600 hover:text-blue-600 transition">Space Engineer</a>
+                    <a href="#ai-lab" class="text-blue-600 font-extrabold flex items-center gap-1">✨ AI Lab</a>
+                </div>
+                <button class="bg-slate-900 text-white px-5 py-2 rounded-xl text-sm font-bold hover:bg-slate-800 transition">Client Login</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-slate-900 py-16 md:py-24 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#2563eb_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        <div class="max-w-5xl mx-auto px-4 text-center relative z-10">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight">
+                Secure Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Creche Registration</span>
+            </h1>
+            <p class="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
+                Transforming the complex <strong>Tusla Regulatory Framework</strong> into a streamlined digital operational path for 15-place boutique services.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-16 space-y-24">
+
+        <!-- Section 1: Roadmap Timeline -->
+        <section id="roadmap" class="scroll-mt-24">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-4 uppercase tracking-tighter">Strategic Launch Roadmap</h2>
+                <p class="text-slate-500">The critical path from planning permission to full registration.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Phase A -->
+                <div class="bg-white p-8 rounded-3xl card-shadow border border-slate-100 flex flex-col">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-xl mb-6">A</div>
+                    <h3 class="text-xl font-extrabold text-slate-900 mb-2">Premises & Viability</h3>
+                    <p class="text-xs font-bold text-slate-400 uppercase mb-4">6-12 Months Before</p>
+                    <ul class="space-y-4 text-sm text-slate-600 flex-1">
+                        <li><strong>• Planning Permission:</strong> Ensure 'Change of Use' is secured for Early Years usage.</li>
+                        <li><strong>• Fire Safety Cert:</strong> Technical blueprints and mandatory certification for registration.</li>
+                        <li><strong>• Layout (Reg 20):</strong> Optimizing net space for max capacity (Wobblers vs Toddlers).</li>
+                    </ul>
+                </div>
+                <!-- Phase B -->
+                <div class="bg-white p-8 rounded-3xl card-shadow border border-slate-100 flex flex-col">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-bold text-xl mb-6">B</div>
+                    <h3 class="text-xl font-extrabold text-slate-900 mb-2">Registration Cycle</h3>
+                    <p class="text-xs font-bold text-slate-400 uppercase mb-4">90 Days Before</p>
+                    <ul class="space-y-4 text-sm text-slate-600 flex-1">
+                        <li><strong>• Portal Submission:</strong> Digital application must be sent min. 3 months before opening.</li>
+                        <li><strong>• Insurance (Reg 28):</strong> Specific liability cover finalized for 15 spots.</li>
+                        <li><strong>• Schedule 5 Policies:</strong> 21 mandatory policies tailored to the 2026 QRF.</li>
+                    </ul>
+                </div>
+                <!-- Phase C -->
+                <div class="bg-white p-8 rounded-3xl card-shadow border border-slate-100 flex flex-col">
+                    <div class="w-12 h-12 bg-rose-100 text-rose-600 rounded-full flex items-center justify-center font-bold text-xl mb-6">C</div>
+                    <h3 class="text-xl font-extrabold text-slate-900 mb-2">Staffing & Launch</h3>
+                    <p class="text-xs font-bold text-slate-400 uppercase mb-4">60 Days Before</p>
+                    <ul class="space-y-4 text-sm text-slate-600 flex-1">
+                        <li><strong>• Garda Vetting:</strong> Full clearance for all employees before they cross the door.</li>
+                        <li><strong>• Reference Audits:</strong> Validating two verbal refs per candidate (Reg 9).</li>
+                        <li><strong>• Fit-for-Purpose:</strong> Pre-opening site audit to ensure 'Inspection Readiness'.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Space Engineer Calculator -->
+        <section id="calculator" class="scroll-mt-24">
+            <div class="bg-white rounded-[2rem] card-shadow border border-slate-100 p-8 md:p-12">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl font-extrabold text-slate-900 mb-6">Hito 1: Space Engineering</h2>
+                        <p class="text-slate-600 mb-8 leading-relaxed">
+                            Regulation 20 requires specific square meters per child. Use this calculator to balance your room mix and ensure your floor space supports your financial goals.
+                        </p>
+                        
+                        <div class="space-y-8">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-slate-700">Wobblers (1-2 yrs) <small class="text-slate-400 font-normal">2.8m² req.</small></span>
+                                    <span id="wobblerCount" class="font-extrabold text-blue-600 text-xl">5</span>
+                                </div>
+                                <input type="range" id="wobblerSlider" min="0" max="15" value="5" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-bold text-slate-700">Toddlers (2-3 yrs) <small class="text-slate-400 font-normal">2.32m² req.</small></span>
+                                    <span id="toddlerCount" class="font-extrabold text-emerald-600 text-xl">10</span>
+                                </div>
+                                <input type="range" id="toddlerSlider" min="0" max="15" value="10" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600">
+                            </div>
+                        </div>
+
+                        <div class="mt-10 p-6 bg-slate-50 rounded-2xl flex justify-between items-center border border-slate-100">
+                            <div>
+                                <p class="text-xs font-bold text-slate-400 uppercase">Total Required Space</p>
+                                <p class="text-3xl font-extrabold text-slate-900" id="totalSpace">37.2 m²</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-xs font-bold text-slate-400 uppercase">Current Capacity</p>
+                                <p class="text-3xl font-extrabold text-blue-600" id="totalChildren">15/15</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <canvas id="spaceChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: AI Compliance Lab -->
+        <section id="ai-lab" class="scroll-mt-24">
+            <div class="bg-slate-900 rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-8">
+                    <span class="px-4 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs font-bold border border-blue-500/30 uppercase tracking-widest">Gemini AI Integration</span>
+                </div>
+                
+                <div class="max-w-3xl mb-12">
+                    <h2 class="text-3xl font-extrabold text-white mb-4">✨ AI Compliance Laboratory</h2>
+                    <p class="text-slate-400 text-lg">
+                        Test your policies, simulate inspections, and audit staff files using our bespoke AI engine trained on Tusla QRF 2026.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <!-- Interaction Zone -->
+                    <div class="space-y-6">
+                        <div class="flex border-b border-slate-700">
+                            <button onclick="switchAITab('audit')" id="tab-audit" class="px-6 py-4 text-sm font-bold tab-active !border-blue-500 !text-blue-400">Policy Auditor</button>
+                            <button onclick="switchAITab('sim')" id="tab-sim" class="px-6 py-4 text-sm font-bold text-slate-500 border-b-4 border-transparent">Inspection Sim</button>
+                        </div>
+
+                        <div id="ai-input-container">
+                            <textarea id="aiInput" class="w-full h-48 bg-slate-800 border border-slate-700 rounded-2xl p-6 text-slate-200 text-sm focus:ring-2 focus:ring-blue-500 outline-none transition" placeholder="Paste your policy text here for a real-time audit..."></textarea>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <button onclick="runAILogic()" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-3 rounded-xl font-extrabold transition shadow-lg shadow-blue-500/20">Analyze ✨</button>
+                            <button onclick="speakResponse()" class="bg-slate-700 hover:bg-slate-600 text-white px-6 py-3 rounded-xl font-bold transition flex items-center gap-2">
+                                <span>🔊 Listen</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Output Zone -->
+                    <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700 relative min-h-[300px]">
+                        <div id="aiLoading" class="hidden absolute inset-0 bg-slate-800/80 backdrop-blur-sm z-10 flex flex-col items-center justify-center">
+                            <div class="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+                            <p class="mt-4 text-blue-400 font-bold loading-dots uppercase text-xs tracking-widest">Processing</p>
+                        </div>
+                        <div id="aiOutput" class="text-slate-300 text-sm font-mono leading-relaxed whitespace-pre-wrap h-full overflow-y-auto">
+                            <p class="text-slate-500 italic">// AI report will appear here. Select a tool to begin.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Staff Vetting & Compliance Radar -->
+        <section class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-6">The SolveED Standard</h2>
+                <p class="text-slate-600 mb-6 leading-relaxed">
+                    Most inspection failures happen in <strong>Regulation 9</strong>. We don't just 'check' staff; we perform deep-dive audits into Gaps in CV, reference validation, and qualification mapping.
+                </p>
+                <div class="space-y-4">
+                    <div class="p-4 bg-emerald-50 rounded-xl border border-emerald-100 flex items-center gap-4">
+                        <div class="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-bold">✓</div>
+                        <span class="text-sm font-bold text-emerald-900">100% Garda Vetting Validated</span>
+                    </div>
+                    <div class="p-4 bg-emerald-50 rounded-xl border border-emerald-100 flex items-center gap-4">
+                        <div class="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-bold">✓</div>
+                        <span class="text-sm font-bold text-emerald-900">Dual Reference Verification</span>
+                    </div>
+                    <div class="p-4 bg-emerald-50 rounded-xl border border-emerald-100 flex items-center gap-4">
+                        <div class="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-bold">✓</div>
+                        <span class="text-sm font-bold text-emerald-900">Qualification Equivalence Mapping</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-8 rounded-[2rem] card-shadow border border-slate-100">
+                <h3 class="text-center font-bold text-slate-400 uppercase text-xs mb-6 tracking-widest">Compliance Scorecard</h3>
+                <div class="chart-container">
+                    <canvas id="staffChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-50 border-t border-slate-200 py-16">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-slate-400 text-sm max-w-2xl mx-auto">
+                <strong>Strategic Notice:</strong> This platform is a supporting tool for ECE providers in Ireland. Registration decisions are at the sole discretion of the Tusla Early Years Inspectorate.
+            </p>
+            <p class="mt-8 text-slate-500 font-extrabold text-lg">SolveED Strategy | 2026</p>
+            <div class="mt-4 flex justify-center gap-6">
+                <span class="text-xs text-slate-300">Reg 9 Management</span>
+                <span class="text-xs text-slate-300">Reg 20 Premises</span>
+                <span class="text-xs text-slate-300">Reg 23 Safety</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- API CONFIG ---
+        const apiKey = "";
+        const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent";
+        const TTS_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent";
+        
+        let currentAITool = 'audit';
+
+        // --- CHART: SPACE ENGINEERING ---
+        const spaceCtx = document.getElementById('spaceChart').getContext('2d');
+        const spaceChart = new Chart(spaceCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Wobbler Space', 'Toddler Space', 'Total Used', 'Capacity Limit'],
+                datasets: [{
+                    label: 'Square Meters (m²)',
+                    data: [14, 23.2, 37.2, 45],
+                    backgroundColor: ['#2563eb', '#10b981', '#1e293b', '#e2e8f0'],
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: { y: { beginAtZero: true } }
+            }
+        });
+
+        // --- CHART: STAFF RADAR ---
+        const staffCtx = document.getElementById('staffChart').getContext('2d');
+        new Chart(staffCtx, {
+            type: 'radar',
+            data: {
+                labels: ['Vetting', 'Refs', 'Quals', 'Gaps', 'ID Check'],
+                datasets: [{
+                    label: 'SolveED Standard',
+                    data: [100, 100, 100, 100, 100],
+                    fill: true,
+                    backgroundColor: 'rgba(37, 99, 235, 0.2)',
+                    borderColor: '#2563eb',
+                    pointBackgroundColor: '#2563eb',
+                }, {
+                    label: 'Market Average',
+                    data: [80, 40, 90, 30, 95],
+                    fill: true,
+                    backgroundColor: 'rgba(226, 232, 240, 0.2)',
+                    borderColor: '#cbd5e1',
+                    pointBackgroundColor: '#cbd5e1',
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                elements: { line: { borderWidth: 3 } }
+            }
+        });
+
+        // --- CALCULATOR LOGIC ---
+        const wobblerSlider = document.getElementById('wobblerSlider');
+        const toddlerSlider = document.getElementById('toddlerSlider');
+
+        function updateSpace() {
+            let w = parseInt(wobblerSlider.value);
+            let t = parseInt(toddlerSlider.value);
+            
+            // Limit to 15 total
+            if ((w + t) > 15) {
+                t = 15 - w;
+                toddlerSlider.value = t;
+            }
+
+            const wReq = w * 2.8;
+            const tReq = t * 2.32;
+            const total = wReq + tReq;
+
+            document.getElementById('wobblerCount').innerText = w;
+            document.getElementById('toddlerCount').innerText = t;
+            document.getElementById('totalChildren').innerText = (w + t) + "/15";
+            document.getElementById('totalSpace').innerText = total.toFixed(1) + " m²";
+
+            spaceChart.data.datasets[0].data = [wReq, tReq, total, 45];
+            spaceChart.update();
+        }
+
+        wobblerSlider.oninput = updateSpace;
+        toddlerSlider.oninput = updateSpace;
+
+        // --- AI LOGIC ---
+        function switchAITab(tool) {
+            currentAITool = tool;
+            const auditBtn = document.getElementById('tab-audit');
+            const simBtn = document.getElementById('tab-sim');
+            const input = document.getElementById('aiInput');
+
+            if (tool === 'audit') {
+                auditBtn.className = "px-6 py-4 text-sm font-bold tab-active !border-blue-500 !text-blue-400";
+                simBtn.className = "px-6 py-4 text-sm font-bold text-slate-500 border-b-4 border-transparent";
+                input.placeholder = "Paste your policy text here for a real-time audit...";
+            } else {
+                simBtn.className = "px-6 py-4 text-sm font-bold tab-active !border-blue-500 !text-blue-400";
+                auditBtn.className = "px-6 py-4 text-sm font-bold text-slate-500 border-b-4 border-transparent";
+                input.placeholder = "Describe a situation (e.g., 'Unannounced visit during lunch') or leave empty to generate a random scenario...";
+            }
+        }
+
+        async function runAILogic() {
+            const output = document.getElementById('aiOutput');
+            const loading = document.getElementById('aiLoading');
+            const input = document.getElementById('aiInput').value;
+
+            loading.classList.remove('hidden');
+
+            const sysPrompt = currentAITool === 'audit' 
+                ? "You are an expert Tusla Compliance Auditor. Analyze the provided text against Ireland's ECE Quality and Regulatory Framework. Identify risks and missing elements for Reg 9, 23 or 19. Be strict and professional."
+                : "You are a Tusla Inspector. Generate a surprise inspection scenario for a 15-place creche. Describe a non-compliance issue found in the Wobbler room (e.g., sleep log gap, nappy bin issue) and ask the user how to resolve it.";
+
+            const query = input || "Generate a baseline report.";
+
+            try {
+                const response = await fetch(`${API_URL}?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: query }] }],
+                        systemInstruction: { parts: [{ text: sysPrompt }] }
+                    })
+                });
+                const data = await response.json();
+                const text = data.candidates?.[0]?.content?.parts?.[0]?.text || "AI Error: Could not generate report.";
+                output.innerText = text;
+            } catch (e) {
+                output.innerText = "Error: API connection failed. Please ensure the environment is configured.";
+            } finally {
+                loading.classList.add('hidden');
+            }
+        }
+
+        async function speakResponse() {
+            const text = document.getElementById('aiOutput').innerText;
+            if (!text || text.includes('report will appear')) return;
+            
+            const loading = document.getElementById('aiLoading');
+            loading.classList.remove('hidden');
+
+            try {
+                const response = await fetch(`${TTS_URL}?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: "Read clearly: " + text.substring(0, 800) }] }],
+                        generationConfig: {
+                            responseModalities: ["AUDIO"],
+                            speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: "Kore" } } }
+                        }
+                    })
+                });
+                const data = await response.json();
+                const audioData = data.candidates[0].content.parts[0].inlineData.data;
+                const sampleRate = parseInt(data.candidates[0].content.parts[0].inlineData.mimeType.match(/rate=(\d+)/)?.[1] || 24000);
+                
+                const blob = pcmToWav(base64ToUint8Array(audioData), sampleRate);
+                new Audio(URL.createObjectURL(blob)).play();
+            } catch (e) {
+                console.error(e);
+            } finally {
+                loading.classList.add('hidden');
+            }
+        }
+
+        // --- TTS HELPERS ---
+        function base64ToUint8Array(base64) {
+            const binaryString = atob(base64);
+            const len = binaryString.length;
+            const bytes = new Uint8Array(len);
+            for (let i = 0; i < len; i++) bytes[i] = binaryString.charCodeAt(i);
+            return bytes;
+        }
+
+        function pcmToWav(pcmData, sampleRate) {
+            const buffer = new ArrayBuffer(44 + pcmData.length);
+            const view = new DataView(buffer);
+            const writeString = (off, s) => { for(let i=0; i<s.length; i++) view.setUint8(off+i, s.charCodeAt(i)); };
+            writeString(0, 'RIFF'); view.setUint32(4, 36 + pcmData.length, true);
+            writeString(8, 'WAVE'); writeString(12, 'fmt '); view.setUint32(16, 16, true);
+            view.setUint16(20, 1, true); view.setUint16(22, 1, true);
+            view.setUint32(24, sampleRate, true); view.setUint32(28, sampleRate * 2, true);
+            view.setUint16(32, 2, true); view.setUint16(34, 16, true);
+            writeString(36, 'data'); view.setUint32(40, pcmData.length, true);
+            new Uint8Array(buffer, 44).set(pcmData);
+            return new Blob([buffer], { type: 'audio/wav' });
+        }
+    </script>
+</body>
+</html>
